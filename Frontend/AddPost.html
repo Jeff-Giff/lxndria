@@ -65,8 +65,11 @@
 		</style>
 		<script>
 			//actively loads inner html accordingly
-			var oFbtnProb = document.getElementById("btnProb");	//oFbtn stands for "object: false button", which, in this case, is a span used as a button   
-			oFbtnProb.onclick = function(){$(#form).load(AddProblem.txt)};
+			$(function(){
+				$("#btnProb").click(function(){
+					$("#form").load("AddProblem.txt");
+				});
+			});
 		</script>
 	</head>
 	<body>
