@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<style type="text/css">
+			/*header*/
+			.head
+			{
+				width: 100%;
+				height: 1.2cm;
+				background-color: #FFFFFF;
+				border-bottom: 0.1cm solid #EEEEEE;
+			}
+			.header
+			{
+				float: right;
+				width: 3cm;
+				height: 0.8cm;
+				padding-top: 0.4cm;
+				text-align: center;
+				background-color: #FFFFFF;
+				font-size: 0.5cm; 
+				color: #0099CC;
+				transition: all 0.5s linear 0s;
+			}
+			.header:hover
+			{
+				background-color:#E4E4E4;             
+			}
+			.clear{clear:both;}
+		</style>
+		<script>
+			var oFbtnProb = document.getElementById("btnProb");	//oFbtn stands for "object: false button", which, in this case, is a span used as a button   
+
+		</script>
+	</head>
+	<body>
+		<div class="head">
+			<div class="header">Profile</div><div class="header">Home</div><div class="header">Add post</div><div class="clear"></div>
+		</div>
+
+		<p>Warning: If you close this tab or if you change the format of your post, your edits will not be saved.</p>
+		<strong>Determine method of post:</strong> 
+		<span id="btnProb">Problem</span> <span id="btnDis">Discussion</span>
+		<!--use load-->
+	</body>
+</html>
