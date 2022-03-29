@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<style type="text/css">
@@ -53,12 +54,14 @@
 			strong
 			{
 				height: 1.5cm;
+				font-size: 0.5cm;
 				float:left;
 			}
 		</style>
 		<script>
+			//actively loads inner html accordingly
 			var oFbtnProb = document.getElementById("btnProb");	//oFbtn stands for "object: false button", which, in this case, is a span used as a button   
-
+			oFbtnProb.onclick = function(){$(#form).load(AddProblem.txt)};
 		</script>
 	</head>
 	<body>
@@ -68,7 +71,8 @@
 
 		<p id="warn">Warning: If you close this tab or if you change the format of your post, your edits will not be saved.</p>
 		<strong>Determine format of post:</strong> 
-		<span id="btnProb" class="right">Problem</span> <span id="btnDis">Discussion</span>
+		<span id="btnDis">Discussion</span> <span id="btnProb" class="right">Problem</span> 
 		<!--use load-->
+		<div id="form"></div>
 	</body>
 </html>
