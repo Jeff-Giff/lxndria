@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<style type="text/css">
+			.head
+			{
+				width: 100%;
+				height: 1.2cm;
+				background-color: #FAFAFA;
+				border-bottom: 1px solid #C0C0C0;
+			}
+			.header
+			{
+				float: right;
+				width: 3cm;
+				height: 0.8cm;
+				padding-top: 0.4cm;
+				text-align: center;
+				background-color: #FAFAFA;
+				font-size: 0.45cm; 
+				color: #0099CC;
+				transition: all 0.5s linear 0s;
+			}
+			.header:hover
+			{
+				background-color:#E4E4E4;             
+			}                           
+			.clear{clear:both;}
+
+			/*autoloaded*/
+			#warn
+			{
+				font-size: 0.6cm; 
+				font-family: Georgia, serif;
+				text-shadow: 0.05cm 0.02cm 0.04cm #880000;
+				color: red;
+				background-color:#E4E4E4;
+				margin-top: 1.5cm;
+			}
+			.right{float:right;}
+			#btnProb
+			{
+				font-size: 0.5cm;
+				color: #0099CC;
+				background: linear-gradient(to top,#33CCCC,#C3F0F0,#F3FCFC,#FFFFFF);
+				width: 2cm;
+				height: 1.5cm;
+				padding-top: 0.5cm;
+				border: 1px solid #E4E4E4;
+			}
+			strong
+			{
+				height: 1.5cm;
+				float:left;
+			}
+		</style>
+		<script>
+			var oFbtnProb = document.getElementById("btnProb");	//oFbtn stands for "object: false button", which, in this case, is a span used as a button   
+
+		</script>
+	</head>
+	<body>
+		<div class="head">
+			<div class="header">PROFILE</div><div class="header">HOME</div><div class="header">ADD POST</div><div class="clear"></div>
+		</div>
+
+		<p id="warn">Warning: If you close this tab or if you change the format of your post, your edits will not be saved.</p>
+		<strong>Determine format of post:</strong> 
+		<span id="btnProb" class="right">Problem</span> <span id="btnDis">Discussion</span>
+		<!--use load-->
+	</body>
+</html>
