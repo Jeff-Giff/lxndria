@@ -40,21 +40,43 @@
 				background-color:#E4E4E4;
 				margin-top: 1.5cm;
 			}
-			.right{float:right;}
 			#btnProb
 			{
+				display:inline-block;
 				font-size: 0.5cm;
-				color: #0099CC;
-				background: linear-gradient(to top,#33CCCC,#C3F0F0,#F3FCFC,#FFFFFF);
-				width: 2cm;
-				height: 1.5cm;
-				padding-top: 0.5cm;
-				border: 1px solid #E4E4E4;
+				color: #3399FF;
+				background: linear-gradient(to top,#3399FF,#6FB7FF,#F3F9FF,#FFFFFF);	/*1:0,12:5,1:16,0:1*/*/
+				width:3cm;
+				height: 1cm;
+				padding-bottom: 0.5cm;
+				position: absolute;
+				margin-top: 0.2cm;
+				right:6cm;
+				transition: all 0.1s linear 0s;
 			}
 			#btnProb:hover
 			{
-				background-color: #33CCCC;
-				
+				background: linear-gradient(to top,#3399FF,#3399FF,#3399FF,#3399FF);
+				color:white;
+			}
+			#btnDis
+			{
+				display:inline-block;
+				font-size: 0.5cm;
+				color: #0099CC;
+				background: linear-gradient(to top,#0099CC,#55B7CB,#F0F9FC,#FFFFFF);
+				width:3cm;
+				height: 1cm;
+				padding-bottom: 0.5cm;
+				position: absolute;
+				margin-top: 0.2cm;
+				right: 3cm;
+				transition: all 0.1s linear 0s;
+			}
+			#btnDis:hover
+			{
+				background: linear-gradient(to top,#0099CC,#0099CC,#0099CC,#0099CC);
+				color:white;
 			}
 			strong
 			{
@@ -62,14 +84,42 @@
 				font-size: 0.5cm;
 				float:left;
 			}
+			
+			.f	/*form*/
+			{
+				margin-top:0;
+				background-color: #E4E4E4;
+				
+				
+				
+			}
+			#border
+			{
+				margin-top:2.3cm;
+				background-color: #E4E4E4;
+				border-top:1px solid #C0C0C0;
+				width: 100%;
+				height: 1cm;
+			}
 		</style>
+		<style type="text/css" id="css"></style>
 		<script>
 			//actively loads inner html accordingly
+
 			$(function(){
-				$("#btnProb").click(function(){
-					$("#form").load("AddProblem.txt");
-				});
-			});
+				$("#btnProb").one("click",function(){
+					$("#btnProb").css({"background":"linear-gradient(to top,#2266AA,#2266AA,#2266AA,#2266AA)", "color":"white"});
+					
+					$.getJSON("AddProblem.json", function(data){
+                    
+                    				var str="";
+                    				$.each(data,function(index,info){
+							str += info["html"];
+                    				})
+                  					$("body").append(str);
+					})
+				})
+			})
 		</script>
 	</head>
 	<body>
@@ -78,9 +128,10 @@
 		</div>
 
 		<p id="warn">Warning: If you close this tab or if you change the format of your post, your edits will not be saved.</p>
-		<strong>Determine format of post:</strong> 
-		<span id="btnDis">Discussion</span> <span id="btnProb" class="right">Problem</span> 
+		<strong>Hi, what are you going to post?</strong> 
+		<span id="btnDis">Discussion</span> <span id="btnProb">Problem</span>	
+		<!--span is used because it is easier to define the style of span--> 
 		<!--use load-->
-		<div id="form"></div>
+		
 	</body>
 </html>
