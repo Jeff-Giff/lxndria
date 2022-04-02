@@ -5,12 +5,14 @@
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<style type="text/css">
+			*{background-color: #E4E4E4;}
 			.head
 			{
 				width: 100%;
 				height: 1.2cm;
-				background-color: #FAFAFA;
-				border-bottom: 1px solid #C0C0C0;
+				background-color: #FFFFFF;
+				border-bottom: 2px solid #C0C0C0;
+				border-radius: 0.5cm;
 			}
 			.header
 			{
@@ -19,7 +21,8 @@
 				height: 0.8cm;
 				padding-top: 0.4cm;
 				text-align: center;
-				background-color: #FAFAFA;
+				background-color: #FFFFFF;
+				border-bottom: 2px solid #C0C0C0;
 				font-size: 0.45cm; 
 				color: #0099CC;
 				transition: all 0.5s linear 0s;
@@ -31,13 +34,14 @@
 			.clear{clear:both;}
 
 			/*autoloaded*/
+			.white{background-color:#FFFFFF;}
 			#warn
 			{
 				font-size: 0.6cm; 
 				font-family: Georgia, serif;
 				text-shadow: 0.05cm 0.02cm 0.04cm #880000;
 				color: red;
-				background-color:#E4E4E4;
+				
 				margin-top: 1.5cm;
 			}
 			#btnProb
@@ -45,12 +49,12 @@
 				display:inline-block;
 				font-size: 0.5cm;
 				color: #3399FF;
-				background: linear-gradient(to top,#3399FF,#6FB7FF,#F3F9FF,#FFFFFF);	/*1:0,12:5,1:16,0:1*/*/
+				background: linear-gradient(to top,#3399FF,#6FB7FF,#F3F9FF,#FFFFFF);	/*1:0,12:5,1:16,0:1*/	/*FIXME: N/A on safari*/
 				width:3cm;
 				height: 1cm;
 				padding-bottom: 0.5cm;
 				position: absolute;
-				margin-top: 0.2cm;
+				margin-top: 0cm;
 				right:6cm;
 				transition: all 0.1s linear 0s;
 			}
@@ -69,7 +73,7 @@
 				height: 1cm;
 				padding-bottom: 0.5cm;
 				position: absolute;
-				margin-top: 0.2cm;
+				margin-top: 0cm;
 				right: 3cm;
 				transition: all 0.1s linear 0s;
 			}
@@ -81,6 +85,7 @@
 			strong
 			{
 				height: 1.5cm;
+				
 				font-size: 0.5cm;
 				float:left;
 			}
@@ -90,14 +95,12 @@
 				margin-top:0;
 				background-color: #E4E4E4;
 				
-				
-				
 			}
 			#border
 			{
-				margin-top:2.3cm;
+				margin-top:0cm;
 				background-color: #E4E4E4;
-				border-top:1px solid #C0C0C0;
+				border-top:2px solid #C0C0C0;
 				width: 100%;
 				height: 1cm;
 			}
@@ -116,7 +119,7 @@
                     				$.each(data,function(index,info){
 							str += info["html"];
                     				})
-                  					$("body").append(str);
+                  				$("body").append(str);
 					})
 				})
 			})
@@ -127,10 +130,13 @@
 			<div class="header">PROFILE</div><div class="header">HOME</div><div class="header">ADD POST</div><div class="clear"></div>
 		</div>
 
-		<p id="warn">Warning: If you close this tab or if you change the format of your post, your edits will not be saved.</p>
-		<strong>Hi, what are you going to post?</strong> 
-		<span id="btnDis">Discussion</span> <span id="btnProb">Problem</span>	
-		<!--span is used because it is easier to define the style of span--> 
+		<div class="white">
+			<p id="warn">Warning: If you close this tab or if you change the format of your post, your edits will not be saved.</p>
+			<strong class="white">Hi, what are you going to post?</strong> 
+			<span id="btnDis">Discussion</span> <span id="btnProb">Problem</span>	
+			<!--span is used because it is easier to define the style of span-->
+			<div class="clear"></div> 
+		</div>
 		<!--use load-->
 		
 	</body>
